@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Field</title>
+</head>
+<body>
+    
+    <script>
+
+        // jika static field / property milik class 
+        // jika tidak maka akan milik instance object
+
+        class Configuration{
+            static name = "Belajar Jacascript";
+            version = 1.0;
+            static author = "Muhammad Ali Albair";
+        }
+
+        const config = new Configuration();
+        console.info(config);
+        console.info(config.name); // undifined
+
+        // cara mengakses static(global), tidak perlu membuat object
+        console.info(Configuration.name);
+        console.info(Configuration.author);
+
+        Configuration.name = "Belajar Javascript OOP";
+        console.info(Configuration.name)
+
+    </script>
+
+</body>
+</html>

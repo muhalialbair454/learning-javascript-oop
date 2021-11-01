@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+
+    <script>
+
+
+        class MathUtil{
+            static sum(...numbers){
+
+                if(numbers.length === 0){
+                    throw new Error("Total parameter harus lebih dari 0");
+                }
+
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        }
+        
+        try{
+            console.info(MathUtil.sum());
+            console.info("Ali");
+        }catch(e){
+            console.info(`Terjadi error ${e.message}`);
+        }finally{
+            console.info("Error tidak Error finally tetap dijalankan");
+        }
+
+        console.info("Ali"); // tetap dicetak, yang error hanya di try, di tangkap di catch dilempar oleh throw
+    </script>
+
+</body>
+</html>
